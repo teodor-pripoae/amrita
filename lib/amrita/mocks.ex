@@ -63,9 +63,9 @@ defmodule Amrita.Mocks do
         try do
           unquote(test)
 
-          Enum.map unquote(mock_modules), fn mock_module ->
-            :meck.validate(mock_module) |> truthy
-          end
+          #Enum.map unquote(mock_modules), fn mock_module ->
+            #:meck.validate(mock_module) |> truthy
+          #end
 
         after
           fails = Provided.Check.fails(prerequisites)
@@ -231,7 +231,7 @@ defmodule Amrita.Mocks do
     @moduledoc false
 
     defmodule Error do
-      defexception form: [] 
+      defexception form: []
 
       def message(exception) do
         "Amrita could not understand your `provided`:\n" <>
